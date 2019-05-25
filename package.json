@@ -11,12 +11,14 @@
     "express": "^4.17.0",
     "helmet": "^3.18.0",
     "morgan": "^1.9.1",
+    "pm2": "^3.5.1",
     "winston": "^3.2.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.0"
   },
   "scripts": {
+    "start": "pm2-runtime start ecosystem.config.js --env production",
     "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
