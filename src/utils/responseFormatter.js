@@ -4,4 +4,4 @@ module.exports = (res, code, message, data) => {
         message,
         data
     })
-}
+};

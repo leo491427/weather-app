@@ -5,7 +5,7 @@ const responseFormatter = require('../utils/responseFormatter');
 const router = express.Router();
 
 
-router.get('/:cc/:city', (req, res) => {
+router.get('/:cc/:city', (req, res, next) => {
     // res.send('weather');
     const {cc, city} = req.params;
     const weatherType = req.query.weatherType;
@@ -13,7 +13,7 @@ router.get('/:cc/:city', (req, res) => {
         .then(response => {
             responseFormatter(res, 200, null, response);
         })
-        .catch(err => console.log(err));
+        .catch(err => next(err));
 });
 
 module.exports = router;
